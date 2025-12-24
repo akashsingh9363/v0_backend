@@ -153,6 +153,9 @@ def get_match_fixtures():
                 'pool': match.pool,
                 'court_number': match.court_number,
                 'court_order': match.court_order,
+
+                'match_outcome': match.match_outcome,  #  ADD THIS LINE
+
                 'team1': {
                     'team_id': match_data.team1_id or "TBD",
                     'name': match_data.team1_name or "TBD",
@@ -188,6 +191,7 @@ def get_match_fixtures():
                     } if match.successor else None
                 } if match.pool == "knockout" else None
             }
+
             match_fixtures.append(fixture)
 
         response = {
